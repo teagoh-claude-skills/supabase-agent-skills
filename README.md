@@ -1,6 +1,7 @@
 # Agent Skills
 
-A collection of skills for AI coding agents. Skills are packaged instructions and scripts that extend agent capabilities.
+A collection of skills for AI coding agents. Skills are packaged instructions
+and scripts that extend agent capabilities.
 
 Skills follow the [Agent Skills](https://agentskills.io/) format.
 
@@ -8,9 +9,11 @@ Skills follow the [Agent Skills](https://agentskills.io/) format.
 
 ### postgresql-best-practices
 
-PostgreSQL performance optimization guidelines from Supabase. Contains rules across 8 categories, prioritized by impact.
+PostgreSQL performance optimization guidelines from Supabase. Contains rules
+across 8 categories, prioritized by impact.
 
 **Use when:**
+
 - Writing SQL queries or designing schemas
 - Implementing indexes or query optimization
 - Reviewing database performance issues
@@ -18,6 +21,7 @@ PostgreSQL performance optimization guidelines from Supabase. Contains rules acr
 - Working with Row-Level Security (RLS)
 
 **Categories covered:**
+
 - Query Performance (Critical)
 - Connection Management (Critical)
 - Schema Design (High)
@@ -27,23 +31,21 @@ PostgreSQL performance optimization guidelines from Supabase. Contains rules acr
 - Monitoring & Diagnostics (Low-Medium)
 - Advanced Features (Low)
 
-## Installation
-
-```bash
-npx add-skill supabase/postgres-best-practices
-```
-
 ## Usage
 
-Skills are automatically available once installed. The agent will use them when relevant tasks are detected.
+Skills are automatically available once installed. The agent will use them when
+relevant tasks are detected.
 
 **Examples:**
+
 ```
 Optimize this PostgreSQL query
 ```
+
 ```
 Review my schema for performance issues
 ```
+
 ```
 Help me add proper indexes to this table
 ```
@@ -51,6 +53,7 @@ Help me add proper indexes to this table
 ## Skill Structure
 
 Each skill contains:
+
 - `SKILL.md` - Instructions for the agent
 - `AGENTS.md` - Compiled rules document (generated)
 - `rules/` - Individual rule files
