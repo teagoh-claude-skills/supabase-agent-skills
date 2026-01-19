@@ -1,0 +1,9 @@
+{
+  "name": "postgres-best-practices",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix packages/postgres-best-practices-build run build",
+    "validate": "npm --prefix packages/postgres-best-practices-build run validate"
+  }
+}
