@@ -1,14 +1,14 @@
 # Section Definitions
 
-This file defines the rule categories for PostgreSQL best practices. Rules are automatically assigned to sections based on their filename prefix.
+This file defines the rule categories for Postgres best practices. Rules are automatically assigned to sections based on their filename prefix.
 
-Take the examples below as pure demonstrative. Replace each section with the actual rule categories for PostgreSQL best practices.
+Take the examples below as pure demonstrative. Replace each section with the actual rule categories for Postgres best practices.
 
 ---
 
 ## 1. Query Performance (query)
 **Impact:** CRITICAL
-**Description:** Slow queries, missing indexes, inefficient query plans. The most common source of PostgreSQL performance issues.
+**Description:** Slow queries, missing indexes, inefficient query plans. The most common source of Postgres performance issues.
 
 ## 2. Connection Management (conn)
 **Impact:** CRITICAL
@@ -36,4 +36,4 @@ Take the examples below as pure demonstrative. Replace each section with the act
 
 ## 8. Advanced Features (advanced)
 **Impact:** LOW
-**Description:** Full-text search, JSONB optimization, PostGIS, extensions, and advanced PostgreSQL features.
+**Description:** Full-text search, JSONB optimization, PostGIS, extensions, and advanced Postgres features.

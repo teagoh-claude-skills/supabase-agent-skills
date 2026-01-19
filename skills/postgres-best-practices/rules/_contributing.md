@@ -1,6 +1,6 @@
-# Writing Guidelines for PostgreSQL Rules
+# Writing Guidelines for Postgres Rules
 
-This document provides guidelines for creating effective PostgreSQL best
+This document provides guidelines for creating effective Postgres best
 practice rules that work well with AI agents and LLMs.
 
 ## Key Principles
@@ -150,7 +150,7 @@ const posts = await db.query("SELECT * FROM posts WHERE user_id = ANY($1)", [
 ````
 
 **Balance:** ~10% of content should be Supabase-specific. Core rules should work
-on any PostgreSQL.
+on any Postgres.
 
 ---
 
@@ -158,16 +158,16 @@ on any PostgreSQL.
 
 **Primary Sources:**
 
-- Official PostgreSQL documentation
+- Official Postgres documentation
 - Supabase documentation
-- PostgreSQL wiki
+- Postgres wiki
 - Established blogs (2ndQuadrant, Crunchy Data)
 
 **Format:**
 
 ```markdown
 Reference:
-[PostgreSQL Indexes](https://www.postgresql.org/docs/current/indexes.html)
+[Postgres Indexes](https://www.postgresql.org/docs/current/indexes.html)
 ```
 
 ---

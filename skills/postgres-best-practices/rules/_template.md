@@ -31,4 +31,4 @@ SELECT * FROM users WHERE email = 'user@example.com' AND deleted_at IS NULL;
 
 [Optional: Additional context, edge cases, or trade-offs]
 
-Reference: [PostgreSQL Docs](https://www.postgresql.org/docs/current/)
+Reference: [Postgres Docs](https://www.postgresql.org/docs/current/)
