@@ -8,7 +8,7 @@ const __dirname = dirname(__filename);
 export const BUILD_DIR = join(__dirname, "..");
 
 // Skill directory (relative to build package)
-export const SKILL_DIR = join(BUILD_DIR, "../../skills/postgresql-best-practices");
+export const SKILL_DIR = join(BUILD_DIR, "../../skills/postgres-best-practices");
 
 // Rules directory
 export const RULES_DIR = join(SKILL_DIR, "rules");

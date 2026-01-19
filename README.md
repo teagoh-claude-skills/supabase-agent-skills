@@ -7,9 +7,9 @@ Skills follow the [Agent Skills](https://agentskills.io/) format.
 
 ## Available Skills
 
-### postgresql-best-practices
+### postgres-best-practices
 
-PostgreSQL performance optimization guidelines from Supabase. Contains rules
+Postgres performance optimization guidelines from Supabase. Contains rules
 across 8 categories, prioritized by impact.
 
 **Use when:**
@@ -39,7 +39,7 @@ relevant tasks are detected.
 **Examples:**
 
 ```
-Optimize this PostgreSQL query
+Optimize this Postgres query
 ```
 
 ```

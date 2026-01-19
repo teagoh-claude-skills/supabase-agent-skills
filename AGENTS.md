@@ -5,7 +5,7 @@ etc.) when working with code in this repository.
 
 ## Repository Overview
 
-A collection of PostgreSQL best practices skills for Claude.ai and Claude Code,
+A collection of Postgres best practices skills for Claude.ai and Claude Code,
 maintained by Supabase. Skills are packaged instructions that extend agent
 capabilities for database optimization.
 
@@ -15,7 +15,7 @@ capabilities for database optimization.
 
 ```
 skills/
-  postgresql-best-practices/
+  postgres-best-practices/
     SKILL.md              # Required: skill definition
     AGENTS.md             # Generated: compiled rules
     metadata.json         # Required: version and metadata
@@ -26,7 +26,7 @@ skills/
       {prefix}-{name}.md  # Individual rule files
 
 packages/
-  postgresql-best-practices-build/
+  postgres-best-practices-build/
     src/                  # Build system source
     package.json          # NPM scripts
 ```
@@ -88,7 +88,7 @@ Skills are loaded on-demand. To minimize context usage:
 After creating or updating rules:
 
 ```bash
-cd packages/postgresql-best-practices-build
+cd packages/postgres-best-practices-build
 npm install
 npm run validate  # Check rule format
 npm run build     # Generate AGENTS.md

@@ -1,5 +1,5 @@
 {
-  "name": "postgresql-best-practices-build",
+  "name": "postgres-best-practices-build",
   "version": "0.1.0",
   "private": true,
   "type": "module",

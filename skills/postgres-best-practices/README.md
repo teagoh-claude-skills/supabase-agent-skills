@@ -1,12 +1,12 @@
-# PostgreSQL Best Practices - Contributor Guide
+# Postgres Best Practices - Contributor Guide
 
-This repository contains PostgreSQL performance optimization rules optimized for AI agents and LLMs.
+This repository contains Postgres performance optimization rules optimized for AI agents and LLMs.
 
 ## Quick Start
 
 ```bash
 # Install dependencies
-cd packages/postgresql-best-practices-build
+cd packages/postgres-best-practices-build
 npm install
 
 # Validate existing rules
@@ -46,7 +46,7 @@ npm run build
 ## Repository Structure
 
 ```
-skills/postgresql-best-practices/
+skills/postgres-best-practices/
 ├── SKILL.md           # Agent-facing skill manifest
 ├── AGENTS.md          # [GENERATED] Compiled rules document
 ├── README.md          # This file
@@ -57,7 +57,7 @@ skills/postgresql-best-practices/
     ├── _contributing.md  # Writing guidelines
     └── *.md              # Individual rules
 
-packages/postgresql-best-practices-build/
+packages/postgres-best-practices-build/
 ├── src/               # Build system source
 ├── package.json       # NPM scripts
 └── test-cases.json    # [GENERATED] Test artifacts
@@ -121,7 +121,7 @@ See `rules/_contributing.md` for detailed guidelines. Key principles:
 
 ## Supabase-Specific Content
 
-Keep ~90% of content as universal PostgreSQL patterns. Add Supabase notes for:
+Keep ~90% of content as universal Postgres patterns. Add Supabase notes for:
 - Supavisor connection pooling
 - Dashboard features (index monitoring, query stats)
 - RLS best practices with Supabase auth

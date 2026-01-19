@@ -60,7 +60,7 @@ function loadMetadata(): Metadata {
       version: "0.1.0",
       organization: "Supabase",
       date: new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" }),
-      abstract: "PostgreSQL performance optimization guide for developers.",
+      abstract: "Postgres performance optimization guide for developers.",
       references: [],
     };
   }
@@ -135,7 +135,7 @@ function buildAgents(): void {
   const output: string[] = [];
 
   // Header
-  output.push("# PostgreSQL Best Practices\n");
+  output.push("# Postgres Best Practices\n");
   output.push(`**Version ${metadata.version}**`);
   output.push(`${metadata.organization}`);
   output.push(`${metadata.date}\n`);

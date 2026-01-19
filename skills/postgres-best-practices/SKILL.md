@@ -1,15 +1,15 @@
 ---
-name: supabase-postgresql-best-practices
-description: PostgreSQL performance optimization and best practices from Supabase. Use this skill when writing, reviewing, or optimizing PostgreSQL queries, schema designs, or database configurations.
+name: supabase-postgres-best-practices
+description: Postgres performance optimization and best practices from Supabase. Use this skill when writing, reviewing, or optimizing Postgres queries, schema designs, or database configurations.
 license: MIT
 metadata:
   author: supabase
   version: "0.1.0"
 ---
 
-# Supabase PostgreSQL Best Practices
+# Supabase Postgres Best Practices
 
-Comprehensive performance optimization guide for PostgreSQL, maintained by Supabase. Contains rules across 8 categories, prioritized by impact to guide automated query optimization and schema design.
+Comprehensive performance optimization guide for Postgres, maintained by Supabase. Contains rules across 8 categories, prioritized by impact to guide automated query optimization and schema design.
 
 ## When to Apply
 
@@ -18,7 +18,7 @@ Reference these guidelines when:
 - Implementing indexes or query optimization
 - Reviewing database performance issues
 - Configuring connection pooling or scaling
-- Optimizing for PostgreSQL-specific features
+- Optimizing for Postgres-specific features
 - Working with Row-Level Security (RLS)
 
 ## Rule Categories by Priority

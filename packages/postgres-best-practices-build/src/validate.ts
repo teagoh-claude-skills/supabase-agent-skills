@@ -145,13 +145,13 @@ export function validateAllRules(): {
 const isMainModule = process.argv[1]?.endsWith("validate.ts") || process.argv[1]?.endsWith("validate.js");
 
 if (isMainModule) {
-  console.log("Validating PostgreSQL best practices rules...\n");
+  console.log("Validating Postgres best practices rules...\n");
 
   const { totalFiles, validFiles, invalidFiles, results } = validateAllRules();
 
   if (totalFiles === 0) {
     console.log("No rule files found (this is expected for initial setup).");
-    console.log("Create rule files in: skills/postgresql-best-practices/rules/");
+    console.log("Create rule files in: skills/postgres-best-practices/rules/");
     console.log("Use the _template.md as a starting point.\n");
     process.exit(0);
   }
