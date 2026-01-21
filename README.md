@@ -75,7 +75,6 @@ Help me add proper indexes to this table
 
 Each skill contains:
 
-- `.claude-plugin` - Exports the skills as a claude code plugin
 - `SKILL.md` - Instructions for the agent
 - `AGENTS.md` - Compiled rules document (generated)
 - `rules/` - Individual rule files

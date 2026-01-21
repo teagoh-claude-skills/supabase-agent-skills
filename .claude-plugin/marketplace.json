@@ -11,26 +11,12 @@
   "plugins": [
     {
       "name": "postgres-best-practices",
-      "source": "./skills/postgres-best-practices",
       "description": "Postgres performance optimization and best practices. Use when writing, reviewing, or optimizing Postgres queries, schema designs, or database configurations.",
-      "version": "1.0.0",
-      "author": {
-        "name": "Supabase"
-      },
-      "category": "database",
-      "keywords": [
-        "postgres",
-        "postgresql",
-        "database",
-        "sql",
-        "performance",
-        "optimization",
-        "supabase",
-        "rls",
-        "indexing"
-      ],
-      "repository": "https://github.com/supabase/agent-skills",
-      "license": "MIT"
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/postgres-best-practices"
+      ]
     }
   ]
 }
