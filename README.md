@@ -1,7 +1,8 @@
-# Agent Skills
+# Supabase Agent Skills
 
-A collection of skills for AI coding agents. Skills are packaged instructions
-and scripts that extend agent capabilities.
+Battle-tested database expertise from Supabase, packaged as AI agent skills.
+These skills provide AI coding agents with proven patterns for building and
+optimizing production Postgres applications.
 
 Skills follow the [Agent Skills](https://agentskills.io/) format.
 
@@ -22,7 +23,8 @@ You can also install the skills in this repo as Claude Code plugins
 
 ## Available Skills
 
-### postgres-best-practices
+<details>
+<summary><strong>postgres-best-practices</strong></summary>
 
 Postgres performance optimization guidelines from Supabase. Contains rules
 across 8 categories, prioritized by impact.
@@ -45,6 +47,8 @@ across 8 categories, prioritized by impact.
 - Data Access Patterns (Medium)
 - Monitoring & Diagnostics (Low-Medium)
 - Advanced Features (Low)
+
+</details>
 
 ## Usage
 
