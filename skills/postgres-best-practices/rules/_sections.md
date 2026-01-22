@@ -14,17 +14,17 @@ Take the examples below as pure demonstrative. Replace each section with the act
 **Impact:** CRITICAL
 **Description:** Connection pooling, limits, and serverless strategies. Critical for applications with high concurrency or serverless deployments.
 
-## 3. Schema Design (schema)
+## 3. Security & RLS (security)
+**Impact:** CRITICAL
+**Description:** Row-Level Security policies, privilege management, and authentication patterns.
+
+## 4. Schema Design (schema)
 **Impact:** HIGH
 **Description:** Table design, index strategies, partitioning, and data type selection. Foundation for long-term performance.
 
-## 4. Concurrency & Locking (lock)
+## 5. Concurrency & Locking (lock)
 **Impact:** MEDIUM-HIGH
 **Description:** Transaction management, isolation levels, deadlock prevention, and lock contention patterns.
-
-## 5. Security & RLS (security)
-**Impact:** MEDIUM-HIGH
-**Description:** Row-Level Security policies, privilege management, and authentication patterns.
 
 ## 6. Data Access Patterns (data)
 **Impact:** MEDIUM

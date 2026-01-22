@@ -22,9 +22,9 @@ npm run build
 1. **Choose a section prefix** based on the category:
    - `query-` Query Performance (CRITICAL)
    - `conn-` Connection Management (CRITICAL)
+   - `security-` Security & RLS (CRITICAL)
    - `schema-` Schema Design (HIGH)
    - `lock-` Concurrency & Locking (MEDIUM-HIGH)
-   - `security-` Security & RLS (MEDIUM-HIGH)
    - `data-` Data Access Patterns (MEDIUM)
    - `monitor-` Monitoring & Diagnostics (LOW-MEDIUM)
    - `advanced-` Advanced Features (LOW)

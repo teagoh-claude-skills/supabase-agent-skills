@@ -106,9 +106,9 @@ npm run build     # Generate AGENTS.md
 | ----------- | ------------------------ | --------------- |
 | `query-`    | Query Performance        | 1 (CRITICAL)    |
 | `conn-`     | Connection Management    | 2 (CRITICAL)    |
-| `schema-`   | Schema Design            | 3 (HIGH)        |
-| `lock-`     | Concurrency & Locking    | 4 (MEDIUM-HIGH) |
-| `security-` | Security & RLS           | 5 (MEDIUM-HIGH) |
+| `security-` | Security & RLS           | 3 (CRITICAL)    |
+| `schema-`   | Schema Design            | 4 (HIGH)        |
+| `lock-`     | Concurrency & Locking    | 5 (MEDIUM-HIGH) |
 | `data-`     | Data Access Patterns     | 6 (MEDIUM)      |
 | `monitor-`  | Monitoring & Diagnostics | 7 (LOW-MEDIUM)  |
 | `advanced-` | Advanced Features        | 8 (LOW)         |

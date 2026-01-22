@@ -29,20 +29,20 @@ Comprehensive Postgres performance optimization guide for developers using Supab
    - 2.3 [Use Connection Pooling for All Applications](#23-use-connection-pooling-for-all-applications)
    - 2.4 [Use Prepared Statements Correctly with Pooling](#24-use-prepared-statements-correctly-with-pooling)
 
-3. [Schema Design](#schema-design) - **HIGH**
+3. [Security & RLS](#security-rls) - **CRITICAL**
    - 3.1 [Choose Appropriate Data Types](#31-choose-appropriate-data-types)
    - 3.2 [Index Foreign Key Columns](#32-index-foreign-key-columns)
    - 3.3 [Partition Large Tables for Better Performance](#33-partition-large-tables-for-better-performance)
    - 3.4 [Select Optimal Primary Key Strategy](#34-select-optimal-primary-key-strategy)
    - 3.5 [Use Lowercase Identifiers for Compatibility](#35-use-lowercase-identifiers-for-compatibility)
 
-4. [Concurrency & Locking](#concurrency-locking) - **MEDIUM-HIGH**
+4. [Schema Design](#schema-design) - **HIGH**
    - 4.1 [Keep Transactions Short to Reduce Lock Contention](#41-keep-transactions-short-to-reduce-lock-contention)
    - 4.2 [Prevent Deadlocks with Consistent Lock Ordering](#42-prevent-deadlocks-with-consistent-lock-ordering)
    - 4.3 [Use Advisory Locks for Application-Level Locking](#43-use-advisory-locks-for-application-level-locking)
    - 4.4 [Use SKIP LOCKED for Non-Blocking Queue Processing](#44-use-skip-locked-for-non-blocking-queue-processing)
 
-5. [Security & RLS](#security-rls) - **MEDIUM-HIGH**
+5. [Concurrency & Locking](#concurrency-locking) - **MEDIUM-HIGH**
    - 5.1 [Apply Principle of Least Privilege](#51-apply-principle-of-least-privilege)
    - 5.2 [Enable Row Level Security for Multi-Tenant Data](#52-enable-row-level-security-for-multi-tenant-data)
    - 5.3 [Optimize RLS Policies for Performance](#53-optimize-rls-policies-for-performance)
@@ -427,11 +427,11 @@ Reference: https://supabase.com/docs/guides/database/connecting-to-postgres#conn
 
 ---
 
-## 3. Schema Design
+## 3. Security & RLS
 
-**Impact: HIGH**
+**Impact: CRITICAL**
 
-Table design, index strategies, partitioning, and data type selection. Foundation for long-term performance.
+Row-Level Security policies, privilege management, and authentication patterns.
 
 ### 3.1 Choose Appropriate Data Types
 
@@ -686,11 +686,11 @@ Reference: https://www.postgresql.org/docs/current/sql-syntax-lexical.html#SQL-S
 
 ---
 
-## 4. Concurrency & Locking
+## 4. Schema Design
 
-**Impact: MEDIUM-HIGH**
+**Impact: HIGH**
 
-Transaction management, isolation levels, deadlock prevention, and lock contention patterns.
+Table design, index strategies, partitioning, and data type selection. Foundation for long-term performance.
 
 ### 4.1 Keep Transactions Short to Reduce Lock Contention
 
@@ -894,11 +894,11 @@ Reference: https://www.postgresql.org/docs/current/sql-select.html#SQL-FOR-UPDAT
 
 ---
 
-## 5. Security & RLS
+## 5. Concurrency & Locking
 
 **Impact: MEDIUM-HIGH**
 
-Row-Level Security policies, privilege management, and authentication patterns.
+Transaction management, isolation levels, deadlock prevention, and lock contention patterns.
 
 ### 5.1 Apply Principle of Least Privilege
 
