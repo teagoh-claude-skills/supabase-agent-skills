@@ -1,0 +1,123 @@
+# .github/workflows/deploy-to-claude.yml
+#
+# For repos with MULTIPLE skills under a skills/ directory.
+# Deploys each skill subfolder as a separate skill to the Anthropic API.
+#
+# Setup:
+#   1. Copy to .github/workflows/deploy-to-claude.yml
+#   2. Add ANTHROPIC_API_KEY as a repo secret
+#   3. Push — each skills/* subfolder gets deployed independently
+#
+# Skill IDs are tracked in .skill-ids.json (committed back to the repo)
+# so subsequent pushes update existing skills instead of creating duplicates.
+
+name: Deploy Skills to Claude API
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'skills/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install anthropic
+
+      - name: Deploy all skills
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python - << 'SCRIPT'
+          import os
+          import json
+          import hashlib
+          from pathlib import Path
+          import anthropic
+          from anthropic.lib import files_from_dir
+
+          client = anthropic.Anthropic()
+          beta = "skills-2025-10-02"
+          skills_dir = Path("skills")
+          ids_file = Path(".skill-ids.json")
+
+          # Load existing skill ID mappings
+          skill_ids = {}
+          if ids_file.exists():
+              skill_ids = json.loads(ids_file.read_text())
+
+          # Find all skill folders (must contain SKILL.md)
+          skill_folders = sorted(
+              d for d in skills_dir.iterdir()
+              if d.is_dir() and (d / "SKILL.md").exists()
+          )
+
+          if not skill_folders:
+              print("No skills found under skills/")
+              exit(0)
+
+          print(f"Found {len(skill_folders)} skill(s)\n")
+
+          for folder in skill_folders:
+              name = folder.name
+              print(f"{'='*50}")
+              print(f"Deploying: {name}")
+
+              # Read display title from SKILL.md frontmatter
+              title = name
+              try:
+                  with open(folder / "SKILL.md") as f:
+                      for line in f:
+                          if line.strip().startswith("name:"):
+                              title = line.split(":", 1)[1].strip().strip('"').strip("'")
+                              break
+              except Exception:
+                  pass
+
+              existing_id = skill_ids.get(name)
+
+              try:
+                  if existing_id:
+                      print(f"  Updating existing skill: {existing_id}")
+                      version = client.beta.skills.versions.create(
+                          skill_id=existing_id,
+                          files=files_from_dir(str(folder)),
+                          betas=[beta],
+                      )
+                      print(f"  ✅ New version: {version.version}")
+                  else:
+                      print(f"  Creating new skill: {title}")
+                      skill = client.beta.skills.create(
+                          display_title=title,
+                          files=files_from_dir(str(folder)),
+                          betas=[beta],
+                      )
+                      skill_ids[name] = skill.id
+                      print(f"  ✅ Created: {skill.id}")
+              except Exception as e:
+                  print(f"  ❌ Failed: {e}")
+
+              print()
+
+          # Save updated skill IDs
+          ids_file.write_text(json.dumps(skill_ids, indent=2) + "\n")
+          print(f"Saved skill IDs to {ids_file}")
+          SCRIPT
+
+      - name: Commit skill ID mappings
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .skill-ids.json
+          git diff --cached --quiet || git commit -m "chore: update skill ID mappings"
+          git push
